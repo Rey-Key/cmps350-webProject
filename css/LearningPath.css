@@ -90,3 +90,10 @@ h2 {
 .gpa-calculator h3, .course-recommendations h3 {
     margin-top: 0;
 }
+.bottom-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 10px;
+    
+
+}
