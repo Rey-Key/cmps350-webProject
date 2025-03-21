@@ -33,23 +33,5 @@ class Course {
         `;
     }
 
-    // Method to render the registration details section
-    renderRegistrationDetails() {
-        return `
-            <div class="registration-details">
-                <h2>Registration Details</h2>
-                <ul>
-                    <li>
-                        <label>Prerequisites - ${this.prerequisites.length ? this.prerequisites.join(", ") : "None - You meet all requirements"}</label>
-                    </li>
-                    <li>
-                        <label>Available Seats - ${this.availableSeats} of ${this.seats} seats remaining</label>
-                    </li>
-                    <li>
-                        <label>Registration Deadline - ${this.deadline}</label>
-                    </li>
-                </ul>
-            </div>
-        `;
-    }
+
 }

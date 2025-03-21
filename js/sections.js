@@ -11,33 +11,71 @@ renderCourseInfo()
 renderCourseDescription()
 renderRegistrationDetails() 
 
+const sections = [
+   
+];
 
-class Section {
-    constructor(id, schedule, instructor, seats) {
-        this.id = id;
-        this.schedule = schedule;
-        this.instructor = instructor;
-        this.seats = seats;
-    }
+    class Section {
+        constructor(
+            id,
+            schedule,
+            instructor,
+            seats,
+            availableSeats,
+            deadline,
+            location,
+            status
+        ) {
+            this.id = id;
+            this.schedule = schedule;
+            this.instructor = instructor;
+            this.seats = seats;
+            this.availableSeats = availableSeats;
+            this.deadline = deadline;
+            this.location = location;
+            this.status = status;
+        }
+    
+        // Method to render the section as HTML
+        render() {
+            return `
+                <div class="section">
+                    <h3>${this.id}</h3>
+                    <p><strong>Schedule:</strong> ${this.schedule}</p>
+                    <p><strong>Instructor:</strong> ${this.instructor}</p>
+                    <p><strong>Seats:</strong> ${this.availableSeats} of ${this.seats} seats remaining</p>
+                    <p><strong>Deadline:</strong> ${this.deadline}</p>
+                    <p><strong>Location:</strong> ${this.location}</p>
+                    <p><strong>Status:</strong> ${this.status}</p>
+                    <input type="radio" name="section" value="${this.id}">
+                </div>
+            `;
+        }
 
-    // Method to render the section as HTML
-    render() {
+            // Method to render the registration details section
+    renderRegistrationDetails() {
         return `
-            <div class="section">
-                <h3>${this.id}</h3>
-                <p><strong>Schedule:</strong> ${this.schedule}</p>
-                <p><strong>Instructor:</strong> ${this.instructor}</p>
-                <p><strong>Seats:</strong> ${this.seats} seats</p>
-                <input type="radio" name="section" value="${this.id}">
+            <div class="registration-details">
+                <h2>Registration Details</h2>
+                <ul>
+                    <li>
+                        <label>Prerequisites - ${this.prerequisites.length ? this.prerequisites.join(", ") : "None - You meet all requirements"}</label>
+                    </li>
+                    <li>
+                        <label>Available Seats - ${this.availableSeats} of ${this.seats} seats remaining</label>
+                    </li>
+                    <li>
+                        <label>Registration Deadline - ${this.deadline}</label>
+                    </li>
+                </ul>
             </div>
         `;
     }
-}
-const sections = [
-    new Section("Section B1", "Mon/Wed 10:00-11:30 AM", "Dr. Ahmed Hassan", 23),
-    new Section("Section B2", "Tue/Thu 10:00-21:30 PM", "Dr. Sarah Johnson", 15),
-    new Section("Section B3", "Mon/Wed 3:00-4:30 PM", "Dr. Ahmed Hassan", 8),
-];
+    }
+
+
+
+
 
 let loggedInStudent = null;
 let selectedCourse = null;
