@@ -1,11 +1,3 @@
-// const students = [
-//     {
-//         id: "20210134",
-//         name: "John Doe",
-//         completedCourses: ["MATH101", "PHYS201"], // Courses the student has passed
-//         pendingCourses: [], // Courses the student has registered for but not yet approved
-//     },
-// ];
 
 renderCourseInfo()
 renderCourseDescription()
@@ -15,17 +7,8 @@ const sections = [
    
 ];
 
-    class Section {
-        constructor(
-            id,
-            schedule,
-            instructor,
-            seats,
-            availableSeats,
-            deadline,
-            location,
-            status
-        ) {
+class Section {
+    constructor( id,schedule,instructor,seats,availableSeats,deadline,location,status) {
             this.id = id;
             this.schedule = schedule;
             this.instructor = instructor;
@@ -71,29 +54,11 @@ const sections = [
             </div>
         `;
     }
-    }
-
-
-
+}
 
 
 let loggedInStudent = null;
 let selectedCourse = null;
-
-
-
-    selectedCourse.sections.forEach((section) => {
-        const sectionDiv = document.createElement("div");
-        sectionDiv.className = "section";
-        sectionDiv.innerHTML = `
-            <p><strong>Section ${section.id}</strong></p>
-            <p>Schedule: ${section.schedule}</p>
-            <p>Instructor: ${section.instructor}</p>
-            <p>Seats Available: ${section.seats}</p>
-            <button onclick="registerSection('${section.id}')">Register</button>
-        `;
-        sectionsList.appendChild(sectionDiv);
-    });
 
     function renderSections() {
         const sectionsContainer = document.getElementById("sections-container");
