@@ -9,8 +9,13 @@
 <body>
     <div class="registration-container">
         <h1>Course Registration</h1>
+         <!-- Course Info, Description, and Registration Details -->
+         
+         <div id="course-container">
+            <!-- Content will be dynamically populated here -->
+        </div>
         
-        <div class="course-info">
+        <!-- <div class="course-info">
             <img src="" alt="">
             <h2>CMPS 101</h2>
             <p>Introduction to Computer Science</p>
@@ -40,11 +45,18 @@
                     <label for="deadline">Registration Deadline - August 25, 2023</label>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <div class="section-selection">
             <h2>Select Section</h2>
-            <table class="section-table">
+            <div id="sections-container" class="sections-container">
+                <!-- Sections will be dynamically populated here -->
+            </div>
+        </div>
+
+        <!-- <div class="section-selection">
+            <h2>Select Section</h2> -->
+            <!-- <table class="section-table">
                 <thead>
                     <tr>
                         <th>Section</th>
@@ -77,8 +89,10 @@
                         <td><input type="radio" name="section" value="B3"></td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
+            </table> -->
+            
+        <!-- </div> -->
+
 
         <div class="confirmation">
             <h2>Confirmation</h2>
@@ -89,7 +103,7 @@
         </div>
 
         <div class="actions">
-            <a href="#" class="button">Confirm Registration</a>
+            <button type="button" onclick="registerSection()">Register</button>
             <a href="#" class="button">Cancel</a>
         </div>
 
